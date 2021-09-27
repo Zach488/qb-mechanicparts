@@ -104,7 +104,7 @@ AddEventHandler('qb-mechanicparts:E0', function()
     engine = GetVehicleMod(veh, 11)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if engine == 0 or engine == 1 or engine == 2 or engine == 3 then
+                  if engine ~= -1 then 
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -139,13 +139,10 @@ AddEventHandler('qb-mechanicparts:E0', function()
                                     TriggerServerEvent("QBCore:Server:RemoveItem", "engine0", 1)
                                     TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["engine0"], "remove")
                                     QBCore.Functions.Notify("Stock Engine Successfully installed", "Success", 5000)
-
                                 end)
                             end
                         end
                     end
-                elseif engine > 3 then
-                    QBCore.Functions.Notify("Cannot Install Engine", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Stock Engine Already Installed", "Error", 5000)
                 end
@@ -156,7 +153,6 @@ AddEventHandler('qb-mechanicparts:E0', function()
             QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
-
 RegisterNetEvent('qb-mechanicparts:E1')
 AddEventHandler('qb-mechanicparts:E1', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
@@ -164,7 +160,7 @@ AddEventHandler('qb-mechanicparts:E1', function()
     engine = GetVehicleMod(veh, 11)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if engine == -1 or engine == 1 then
+                if engine ~= 0 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -204,8 +200,6 @@ AddEventHandler('qb-mechanicparts:E1', function()
                             end
                         end
                     end
-                elseif engine > 1 then
-                    QBCore.Functions.Notify("Cannot Install Engine", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Engine Upgrade B Already Installed", "Error", 5000)
                 end
@@ -224,7 +218,7 @@ AddEventHandler('qb-mechanicparts:E2', function()
     engine = GetVehicleMod(veh, 11)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if engine == 0 or engine == 2 then
+                if engine ~= 1 then 
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -264,8 +258,6 @@ AddEventHandler('qb-mechanicparts:E2', function()
                             end
                         end
                     end
-                elseif engine > 1 or engine < 0 then
-                    QBCore.Functions.Notify("Cannot Install Engine", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Engine Upgrade C Already Installed", "Error", 5000)
                 end
@@ -284,7 +276,7 @@ AddEventHandler('qb-mechanicparts:E3', function()
     engine = GetVehicleMod(veh, 11)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if engine == 1 or engine == 3 then
+                if engine ~= 2 then 
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -324,8 +316,6 @@ AddEventHandler('qb-mechanicparts:E3', function()
                             end
                         end
                     end
-                elseif engine > 3 or engine < 1 then
-                    QBCore.Functions.Notify("Cannot Install Engine", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Engine Upgrade D Already Installed", "Error", 5000)
                 end
@@ -345,7 +335,7 @@ AddEventHandler('qb-mechanicparts:E4', function()
     engine = GetVehicleMod(veh, 11)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if engine == 2 then
+                if engine ~= 3 then 
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -385,8 +375,6 @@ AddEventHandler('qb-mechanicparts:E4', function()
                             end
                         end
                     end
-                elseif engine < 3 then
-                    QBCore.Functions.Notify("Cannot Install Engine", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Engine Upgrade S Already Installed", "Error", 5000)
                 end
@@ -406,7 +394,7 @@ AddEventHandler('qb-mechanicparts:B0', function()
     brake = GetVehicleMod(veh, 12)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if brake == 0 or brake == 1 or brake == 2 then
+                if brake ~= -1 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -446,8 +434,6 @@ AddEventHandler('qb-mechanicparts:B0', function()
                             end
                         end
                     end
-                elseif brake > 2 then
-                    QBCore.Functions.Notify("Cannot Install Brakes", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Stock Brakes Already Installed", "Error", 5000)
                 end
@@ -466,7 +452,7 @@ AddEventHandler('qb-mechanicparts:B1', function()
     brake = GetVehicleMod(veh, 12)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if brake == -1 or brake == 1 then
+                if brake ~= 0 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -506,8 +492,6 @@ AddEventHandler('qb-mechanicparts:B1', function()
                             end
                         end
                     end
-                elseif brake > 1 then
-                    QBCore.Functions.Notify("Cannot Install Brakes", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Brakes Upgrade B Already Installed", "Error", 5000)
                 end
@@ -526,7 +510,7 @@ AddEventHandler('qb-mechanicparts:B2', function()
     brake = GetVehicleMod(veh, 12)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if brake == 0 or brake == 2 then
+                if brake ~= 1 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -566,8 +550,6 @@ AddEventHandler('qb-mechanicparts:B2', function()
                             end
                         end
                     end
-                elseif brake > 1 or brake < 0 then
-                    QBCore.Functions.Notify("Cannot Install Brakes", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Brakes Upgrade C Already Installed", "Error", 5000)
                 end
@@ -586,7 +568,7 @@ AddEventHandler('qb-mechanicparts:B3', function()
     brake = GetVehicleMod(veh, 12)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if brake == 1 then
+                if brake ~= 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -626,8 +608,6 @@ AddEventHandler('qb-mechanicparts:B3', function()
                             end
                         end
                     end
-                elseif brake > 3 or brake < 1 then
-                    QBCore.Functions.Notify("Cannot Install Brakes", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Brakes Upgrade S Already Installed", "Error", 5000)
                 end
@@ -647,7 +627,7 @@ AddEventHandler('qb-mechanicparts:T0', function()
     transmission = GetVehicleMod(veh, 13)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if transmission == 0 or transmission == 1 or transmission == 2 then
+                if transmission ~= -1 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -687,8 +667,6 @@ AddEventHandler('qb-mechanicparts:T0', function()
                             end
                         end
                     end
-                elseif transmission > 2 then
-                    QBCore.Functions.Notify("Cannot Install Transmission", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Stock Transmission Already Installed", "Error", 5000)
                 end
@@ -707,7 +685,7 @@ AddEventHandler('qb-mechanicparts:T1', function()
     transmission = GetVehicleMod(veh, 13)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if transmission == -1 or transmission == 1 then
+                if transmission ~= 0 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -747,8 +725,6 @@ AddEventHandler('qb-mechanicparts:T1', function()
                             end
                         end
                     end
-                elseif transmission > 1 then
-                    QBCore.Functions.Notify("Cannot Install Transmission", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Transmission Upgrade B Already Installed", "Error", 5000)
                 end
@@ -767,7 +743,7 @@ AddEventHandler('qb-mechanicparts:T2', function()
     transmission = GetVehicleMod(veh, 13)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if transmission == 0 or transmission == 2 then
+                if transmission ~= 1 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -807,8 +783,6 @@ AddEventHandler('qb-mechanicparts:T2', function()
                             end
                         end
                     end
-                elseif transmission > 1 or transmission < 0 then
-                    QBCore.Functions.Notify("Cannot Install Transmission", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Transmission Upgrade C Already Installed", "Error", 5000)
                 end
@@ -827,7 +801,7 @@ AddEventHandler('qb-mechanicparts:T3', function()
     transmission = GetVehicleMod(veh, 13)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if transmission == 1 then
+                if transmission ~= 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -867,8 +841,6 @@ AddEventHandler('qb-mechanicparts:T3', function()
                             end
                         end
                     end
-                elseif transmission > 3 or transmission < 1 then
-                    QBCore.Functions.Notify("Cannot Install Transmission", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Transmission Upgrade S Already Installed", "Error", 5000)
                 end
@@ -888,7 +860,7 @@ AddEventHandler('qb-mechanicparts:S0', function()
     suspension = GetVehicleMod(veh, 15)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if suspension == 0 or suspension == 1 or suspension == 2 then
+                if suspension ~= -1 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -928,8 +900,6 @@ AddEventHandler('qb-mechanicparts:S0', function()
                             end
                         end
                     end
-                elseif suspension > 2 then
-                    QBCore.Functions.Notify("Cannot Install Suspension", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Stock Suspension Already Installed", "Error", 5000)
                 end
@@ -948,7 +918,7 @@ AddEventHandler('qb-mechanicparts:S1', function()
     suspension = GetVehicleMod(veh, 15)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if suspension == -1 or suspension == 1 then
+                if suspension ~= 0 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -988,8 +958,6 @@ AddEventHandler('qb-mechanicparts:S1', function()
                             end
                         end
                     end
-                elseif suspension > 1 then
-                    QBCore.Functions.Notify("Cannot Install Suspension", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Suspension Upgrade B Already Installed", "Error", 5000)
                 end
@@ -1008,7 +976,7 @@ AddEventHandler('qb-mechanicparts:S2', function()
     suspension = GetVehicleMod(veh, 15)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if suspension == 0 or suspension == 2 then
+                if suspension ~= 1 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -1048,8 +1016,6 @@ AddEventHandler('qb-mechanicparts:S2', function()
                             end
                         end
                     end
-                elseif suspension > 1 or suspension < 0 then
-                    QBCore.Functions.Notify("Cannot Install Suspension", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Suspension Upgrade C Already Installed", "Error", 5000)
                 end
@@ -1068,7 +1034,7 @@ AddEventHandler('qb-mechanicparts:S3', function()
     suspension = GetVehicleMod(veh, 15)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if suspension == 1 then
+                if suspension ~= 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -1108,8 +1074,6 @@ AddEventHandler('qb-mechanicparts:S3', function()
                             end
                         end
                     end
-                elseif suspension > 3 or suspension < 1 then
-                    QBCore.Functions.Notify("Cannot Install Suspension", "Error", 5000)
                 else
                     QBCore.Functions.Notify("Suspension Upgrade S Already Installed", "Error", 5000)
                 end
