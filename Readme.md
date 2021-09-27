@@ -120,19 +120,19 @@ Config.TargetBones = {
         options = {
             {
                 type = "client",
-                event = "qb-mechanic:VehicleMenu",
+                event = "qb-mechanicparts:VehicleMenu",
                 icon = "fad fa-key",
                 label = "Vehicle Menu",
             },
             {
                 type = "client",
-                event = "qb-mechanic:CheckVehStatus",
+                event = "qb-mechanicparts:CheckVehStatus",
                 icon = "fas fa-chevron-circle-left",
                 label = "CheckVehStatus",
             },
             {
                 type = "client",
-                event = "qb-mechanic:CheckMods",
+                event = "qb-mechanicparts:CheckMods",
                 icon = "fas fa-chevron-circle-right",
                 label = "CheckMods",
             },
