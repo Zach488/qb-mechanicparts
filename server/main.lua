@@ -201,15 +201,15 @@ end)
 
 RegisterServerEvent("updateVehicle")
 AddEventHandler("updateVehicle", function(myCar)
-	local src = source
+    local src = source
     if IsVehicleOwned(myCar.plate) then
-        exports.ghmattimysql:execute('UPDATE player_vehicles SET mods=@mods WHERE plate=@plate', {['@mods'] = json.encode(myCar), ['@plate'] = myCar.plate})
+        exports.oxmysql:execute('UPDATE player_vehicles SET mods = ? WHERE plate = ?', {json.encode(myCar), myCar.plate})
     end
 end)
 
 function IsVehicleOwned(plate)
     local retval = false
-    local result = exports.ghmattimysql:scalarSync('SELECT plate FROM player_vehicles WHERE plate=@plate', {['@plate'] = plate})
+    local result = exports.oxmysql:scalarSync('SELECT plate FROM player_vehicles WHERE plate = ?', {plate})
     if result then
         retval = true
     end
