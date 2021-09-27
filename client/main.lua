@@ -1068,6 +1068,64 @@ AddEventHandler('qb-mechanicparts:S3', function()
                                     saveVehicle()  
                                     TriggerServerEvent("QBCore:Server:RemoveItem", "suspension3", 1)
                                     TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["suspension3"], "remove")
+                                    QBCore.Functions.Notify("Suspension Upgrade D Successfully installed", "Success", 5000)
+
+                                end)
+                            end
+                        end
+                    end
+                else
+                    QBCore.Functions.Notify("Suspension Upgrade D Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
+
+RegisterNetEvent('qb-mechanicparts:S4')
+AddEventHandler('qb-mechanicparts:S4', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    suspension = GetVehicleMod(veh, 15)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if suspension ~= 3 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+                            
+                                QBCore.Functions.Progressbar("Suspension", "Installing Suspension", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 15, 3, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "suspension4", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["suspension4"], "remove")
                                     QBCore.Functions.Notify("Suspension Upgrade S Successfully installed", "Success", 5000)
 
                                 end)
@@ -1343,6 +1401,9 @@ AddEventHandler('qb-mechanicparts:CheckMods', function()
         suspension = "Upgrade Level C"
     elseif
     suspension == 2 then
+        suspension = "Upgrade Level D"
+    elseif
+    suspension == 3 then
         suspension = "Upgrade Level S"
     end
     if turbo == 1  then

@@ -176,6 +176,16 @@ QBCore.Functions.CreateUseableItem("suspension3", function(source, item)
     end
 end)
 
+QBCore.Functions.CreateUseableItem("suspension4", function(source, item)
+    
+    local Player = QBCore.Functions.GetPlayer(source)
+	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
+        TriggerClientEvent("qb-mechanicparts:S4", source)
+    else
+        TriggerClientEvent('QBCore:Notify', source, "Unknown Error", "error")
+    end
+end)
+
 
 --Turbo
 QBCore.Functions.CreateUseableItem("turbo0", function(source, item)
