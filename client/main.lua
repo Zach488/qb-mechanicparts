@@ -1037,7 +1037,7 @@ AddEventHandler('qb-mechanicparts:S2', function()
                                 }, {}, {}, function() -- Done
                                     ClearPedTasksImmediately(PlayerPedId())
                                     SetVehicleModKit(vehicle, 0)
-                                    SetVehicleMod(vehicle, 13, 2, true)
+                                    SetVehicleMod(vehicle, 13, 1, true)
                                     local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
                                     saveVehicle()  
                                     TriggerServerEvent("QBCore:Server:RemoveItem", "suspension2", 1)
