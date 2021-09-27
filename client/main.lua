@@ -47,7 +47,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     QBCore.Functions.GetPlayerData(function(PlayerData)
         PlayerJob = PlayerData.job
         if PlayerData.job.onduty then
-            if PlayerData.job.name == "gasmonkey" then
+            if PlayerData.job.name == Config.Job then
                 TriggerServerEvent("QBCore:ToggleDuty")
             end
         end
@@ -97,14 +97,12 @@ end
 
 --Engine
 
-RegisterNetEvent('qb-mechanic:E0')
-AddEventHandler('qb-mechanic:E0', function()
+RegisterNetEvent('qb-mechanicparts:E0')
+AddEventHandler('qb-mechanicparts:E0', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     engine = GetVehicleMod(veh, 11)
-		--test job name
         if PlayerJob.name == Config.Job then
-			--test job name
             if onDuty then
                 if engine == 0 or engine == 1 or engine == 2 or engine == 3 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -155,18 +153,16 @@ AddEventHandler('qb-mechanic:E0', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
-RegisterNetEvent('qb-mechanic:E1')
-AddEventHandler('qb-mechanic:E1', function()
+RegisterNetEvent('qb-mechanicparts:E1')
+AddEventHandler('qb-mechanicparts:E1', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     engine = GetVehicleMod(veh, 11)
-		--test job name
         if PlayerJob.name == Config.Job then
-			--test job name
             if onDuty then
                 if engine == -1 or engine == 1 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -217,18 +213,16 @@ AddEventHandler('qb-mechanic:E1', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
-RegisterNetEvent('qb-mechanic:E2')
-AddEventHandler('qb-mechanic:E2', function()
+RegisterNetEvent('qb-mechanicparts:E2')
+AddEventHandler('qb-mechanicparts:E2', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     engine = GetVehicleMod(veh, 11)
-        		--test job name
         if PlayerJob.name == Config.Job then
-			--test job name
             if onDuty then
                 if engine == 0 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -279,16 +273,16 @@ AddEventHandler('qb-mechanic:E2', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
-RegisterNetEvent('qb-mechanic:E3')
-AddEventHandler('qb-mechanic:E3', function()
+RegisterNetEvent('qb-mechanicparts:E3')
+AddEventHandler('qb-mechanicparts:E3', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     engine = GetVehicleMod(veh, 11)
-        if PlayerJob.name == "gasmonkey" then
+        if PlayerJob.name == Config.Job then
             if onDuty then
                 if engine == 1 or engine == 3 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -339,17 +333,17 @@ AddEventHandler('qb-mechanic:E3', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
 
-RegisterNetEvent('qb-mechanic:E4')
-AddEventHandler('qb-mechanic:E4', function()
+RegisterNetEvent('qb-mechanicparts:E4')
+AddEventHandler('qb-mechanicparts:E4', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     engine = GetVehicleMod(veh, 11)
-        if PlayerJob.name == "gasmonkey" then
+        if PlayerJob.name == Config.Job then
             if onDuty then
                 if engine == 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -400,17 +394,17 @@ AddEventHandler('qb-mechanic:E4', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
 --brakes
-RegisterNetEvent('qb-mechanic:B0')
-AddEventHandler('qb-mechanic:B0', function()
+RegisterNetEvent('qb-mechanicparts:B0')
+AddEventHandler('qb-mechanicparts:B0', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     brake = GetVehicleMod(veh, 12)
-        if PlayerJob.name == "gasmonkey" then
+        if PlayerJob.name == Config.Job then
             if onDuty then
                 if brake == 0 or brake == 1 or brake == 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -461,16 +455,16 @@ AddEventHandler('qb-mechanic:B0', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
-RegisterNetEvent('qb-mechanic:B1')
-AddEventHandler('qb-mechanic:B1', function()
+RegisterNetEvent('qb-mechanicparts:B1')
+AddEventHandler('qb-mechanicparts:B1', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     brake = GetVehicleMod(veh, 12)
-        if PlayerJob.name == "gasmonkey" then
+        if PlayerJob.name == Config.Job then
             if onDuty then
                 if brake == -1 or brake == 1 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -521,16 +515,16 @@ AddEventHandler('qb-mechanic:B1', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
-RegisterNetEvent('qb-mechanic:B2')
-AddEventHandler('qb-mechanic:B2', function()
+RegisterNetEvent('qb-mechanicparts:B2')
+AddEventHandler('qb-mechanicparts:B2', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     brake = GetVehicleMod(veh, 12)
-        if PlayerJob.name == "gasmonkey" then
+        if PlayerJob.name == Config.Job then
             if onDuty then
                 if brake == 0 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -561,7 +555,7 @@ AddEventHandler('qb-mechanic:B2', function()
                                 }, {}, {}, function() -- Done
                                     ClearPedTasksImmediately(PlayerPedId())
                                     SetVehicleModKit(vehicle, 0)
-                                    SetVehicleMod(vehicle, 12, 2, true)
+                                    SetVehicleMod(vehicle, 12, 1, true)
                                     local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
                                     saveVehicle()  
                                     TriggerServerEvent("QBCore:Server:RemoveItem", "brake2", 1)
@@ -581,16 +575,16 @@ AddEventHandler('qb-mechanic:B2', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
-RegisterNetEvent('qb-mechanic:B3')
-AddEventHandler('qb-mechanic:B3', function()
+RegisterNetEvent('qb-mechanicparts:B3')
+AddEventHandler('qb-mechanicparts:B3', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     brake = GetVehicleMod(veh, 12)
-        if PlayerJob.name == "gasmonkey" then
+        if PlayerJob.name == Config.Job then
             if onDuty then
                 if brake == 1 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -641,255 +635,616 @@ AddEventHandler('qb-mechanic:B3', function()
                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
             end
         else
-            QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
         end
 end)
 
 -- --Transmission
--- RegisterNetEvent('qb-mechanic:B0')
--- AddEventHandler('qb-mechanic:B0', function()
---     local vehicle = QBCore.Functions.GetClosestVehicle()
---     local PlayerJob = QBCore.Functions.GetPlayerData().job
---     brake = GetVehicleMod(veh, 12)
---         if PlayerJob.name == "gasmonkey" then
---             if onDuty then
---                 if brake == 0 or brake == 1 or brake == 2 then
---                     if vehicle ~= nil and vehicle ~= 0 then
---                         if (IsBackEngine(GetEntityModel(vehicle))) then
---                             SetVehicleDoorOpen(vehicle, 5, false, false)
---                         else
---                             SetVehicleDoorOpen(vehicle, 4, false, false)
---                         end
---                         local ped = PlayerPedId()
---                         local pos = GetEntityCoords(ped)
---                         local vehpos = GetEntityCoords(vehicle)
---                         if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
---                             local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
---                             if (IsBackEngine(GetEntityModel(vehicle))) then
---                                 drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
---                             end
---                             if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+RegisterNetEvent('qb-mechanicparts:T0')
+AddEventHandler('qb-mechanicparts:T0', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    transmission = GetVehicleMod(veh, 13)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if transmission == 0 or transmission == 1 or transmission == 2 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
                             
---                                 QBCore.Functions.Progressbar("Brakes", "Installing Stock Brakes", 10000, false, true, {
---                                     disableMovement = true,
---                                     disableCarMovement = true,
---                                     disableMouse = false,
---                                     disableCombat = true,
---                                 }, {
---                                     animDict = "mini@repair",
---                                     anim = "fixing_a_player",
---                                     flags = 16,
---                                 }, {}, {}, function() -- Done
---                                     ClearPedTasksImmediately(PlayerPedId())
---                                     SetVehicleModKit(vehicle, 0)
---                                     SetVehicleMod(vehicle, 12, -1, true)
---                                     local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
---                                     saveVehicle()  
---                                     TriggerServerEvent("QBCore:Server:RemoveItem", "brake0", 1)
---                                     TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["brake0"], "remove")
---                                     QBCore.Functions.Notify("Stock Brakes Successfully installed", "Success", 5000)
+                                QBCore.Functions.Progressbar("Transmission", "Installing Stock Transmission", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 13, -1, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "transmission0", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["transmission0"], "remove")
+                                    QBCore.Functions.Notify("Stock Transmission Successfully installed", "Success", 5000)
 
---                                 end)
---                             end
---                         end
---                     end
---                 elseif brake > 2 then
---                     QBCore.Functions.Notify("Cannot Install Brakes", "Error", 5000)
---                 else
---                     QBCore.Functions.Notify("Stock Brakes Already Installed", "Error", 5000)
---                 end
---             else
---                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
---             end
---         else
---             QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
---         end
--- end)
+                                end)
+                            end
+                        end
+                    end
+                elseif transmission > 2 then
+                    QBCore.Functions.Notify("Cannot Install Transmission", "Error", 5000)
+                else
+                    QBCore.Functions.Notify("Stock Transmission Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
 
--- RegisterNetEvent('qb-mechanic:B1')
--- AddEventHandler('qb-mechanic:B1', function()
---     local vehicle = QBCore.Functions.GetClosestVehicle()
---     local PlayerJob = QBCore.Functions.GetPlayerData().job
---     brake = GetVehicleMod(veh, 12)
---         if PlayerJob.name == "gasmonkey" then
---             if onDuty then
---                 if brake == -1 or brake == 1 then
---                     if vehicle ~= nil and vehicle ~= 0 then
---                         if (IsBackEngine(GetEntityModel(vehicle))) then
---                             SetVehicleDoorOpen(vehicle, 5, false, false)
---                         else
---                             SetVehicleDoorOpen(vehicle, 4, false, false)
---                         end
---                         local ped = PlayerPedId()
---                         local pos = GetEntityCoords(ped)
---                         local vehpos = GetEntityCoords(vehicle)
---                         if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
---                             local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
---                             if (IsBackEngine(GetEntityModel(vehicle))) then
---                                 drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
---                             end
---                             if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+RegisterNetEvent('qb-mechanicparts:T1')
+AddEventHandler('qb-mechanicparts:T1', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    transmission = GetVehicleMod(veh, 13)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if transmission == -1 or transmission == 1 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
                             
---                                 QBCore.Functions.Progressbar("Brakes", "Installing Brakes", 10000, false, true, {
---                                     disableMovement = true,
---                                     disableCarMovement = true,
---                                     disableMouse = false,
---                                     disableCombat = true,
---                                 }, {
---                                     animDict = "mini@repair",
---                                     anim = "fixing_a_player",
---                                     flags = 16,
---                                 }, {}, {}, function() -- Done
---                                     ClearPedTasksImmediately(PlayerPedId())
---                                     SetVehicleModKit(vehicle, 0)
---                                     SetVehicleMod(vehicle, 12, 0, true)
---                                     local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
---                                     saveVehicle()  
---                                     TriggerServerEvent("QBCore:Server:RemoveItem", "brake1", 1)
---                                     TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["brake1"], "remove")
---                                     QBCore.Functions.Notify("Brake Upgrade B Successfully installed", "Success", 5000)
+                                QBCore.Functions.Progressbar("Transmission", "Installing Transmission", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 13, 0, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "transmission1", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["transmission1"], "remove")
+                                    QBCore.Functions.Notify("Transmission Upgrade B Successfully installed", "Success", 5000)
 
---                                 end)
---                             end
---                         end
---                     end
---                 elseif brake > 1 then
---                     QBCore.Functions.Notify("Cannot Install Brakes", "Error", 5000)
---                 else
---                     QBCore.Functions.Notify("Brakes Upgrade B Already Installed", "Error", 5000)
---                 end
---             else
---                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
---             end
---         else
---             QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
---         end
--- end)
+                                end)
+                            end
+                        end
+                    end
+                elseif transmission > 1 then
+                    QBCore.Functions.Notify("Cannot Install Transmission", "Error", 5000)
+                else
+                    QBCore.Functions.Notify("Transmission Upgrade B Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
 
--- RegisterNetEvent('qb-mechanic:B2')
--- AddEventHandler('qb-mechanic:B2', function()
---     local vehicle = QBCore.Functions.GetClosestVehicle()
---     local PlayerJob = QBCore.Functions.GetPlayerData().job
---     brake = GetVehicleMod(veh, 12)
---         if PlayerJob.name == "gasmonkey" then
---             if onDuty then
---                 if brake == 0 then
---                     if vehicle ~= nil and vehicle ~= 0 then
---                         if (IsBackEngine(GetEntityModel(vehicle))) then
---                             SetVehicleDoorOpen(vehicle, 5, false, false)
---                         else
---                             SetVehicleDoorOpen(vehicle, 4, false, false)
---                         end
---                         local ped = PlayerPedId()
---                         local pos = GetEntityCoords(ped)
---                         local vehpos = GetEntityCoords(vehicle)
---                         if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
---                             local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
---                             if (IsBackEngine(GetEntityModel(vehicle))) then
---                                 drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
---                             end
---                             if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+RegisterNetEvent('qb-mechanicparts:T2')
+AddEventHandler('qb-mechanicparts:T2', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    transmission = GetVehicleMod(veh, 13)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if transmission == 0 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
                             
---                                 QBCore.Functions.Progressbar("Brakes", "Installing Brakes", 10000, false, true, {
---                                     disableMovement = true,
---                                     disableCarMovement = true,
---                                     disableMouse = false,
---                                     disableCombat = true,
---                                 }, {
---                                     animDict = "mini@repair",
---                                     anim = "fixing_a_player",
---                                     flags = 16,
---                                 }, {}, {}, function() -- Done
---                                     ClearPedTasksImmediately(PlayerPedId())
---                                     SetVehicleModKit(vehicle, 0)
---                                     SetVehicleMod(vehicle, 12, 2, true)
---                                     local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
---                                     saveVehicle()  
---                                     TriggerServerEvent("QBCore:Server:RemoveItem", "brake2", 1)
---                                     TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["brake2"], "remove")
---                                     QBCore.Functions.Notify("Brakes Upgrade C Successfully installed", "Success", 5000)
+                                QBCore.Functions.Progressbar("Transmission", "Installing Transmission", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 13, 1, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "transmission2", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["transmission2"], "remove")
+                                    QBCore.Functions.Notify("Transmission Upgrade C Successfully installed", "Success", 5000)
 
---                                 end)
---                             end
---                         end
---                     end
---                 elseif brake > 1 or brake < 0 then
---                     QBCore.Functions.Notify("Cannot Install Brakes", "Error", 5000)
---                 else
---                     QBCore.Functions.Notify("Brakes Upgrade C Already Installed", "Error", 5000)
---                 end
---             else
---                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
---             end
---         else
---             QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
---         end
--- end)
+                                end)
+                            end
+                        end
+                    end
+                elseif transmission > 1 or transmission < 0 then
+                    QBCore.Functions.Notify("Cannot Install Transmission", "Error", 5000)
+                else
+                    QBCore.Functions.Notify("Transmission Upgrade C Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
 
--- RegisterNetEvent('qb-mechanic:B3')
--- AddEventHandler('qb-mechanic:B3', function()
---     local vehicle = QBCore.Functions.GetClosestVehicle()
---     local PlayerJob = QBCore.Functions.GetPlayerData().job
---     brake = GetVehicleMod(veh, 12)
---         if PlayerJob.name == "gasmonkey" then
---             if onDuty then
---                 if brake == 1 then
---                     if vehicle ~= nil and vehicle ~= 0 then
---                         if (IsBackEngine(GetEntityModel(vehicle))) then
---                             SetVehicleDoorOpen(vehicle, 5, false, false)
---                         else
---                             SetVehicleDoorOpen(vehicle, 4, false, false)
---                         end
---                         local ped = PlayerPedId()
---                         local pos = GetEntityCoords(ped)
---                         local vehpos = GetEntityCoords(vehicle)
---                         if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
---                             local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
---                             if (IsBackEngine(GetEntityModel(vehicle))) then
---                                 drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
---                             end
---                             if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+RegisterNetEvent('qb-mechanicparts:T3')
+AddEventHandler('qb-mechanicparts:T3', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    transmission = GetVehicleMod(veh, 13)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if transmission == 1 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
                             
---                                 QBCore.Functions.Progressbar("Brakes", "Installing Brakes", 10000, false, true, {
---                                     disableMovement = true,
---                                     disableCarMovement = true,
---                                     disableMouse = false,
---                                     disableCombat = true,
---                                 }, {
---                                     animDict = "mini@repair",
---                                     anim = "fixing_a_player",
---                                     flags = 16,
---                                 }, {}, {}, function() -- Done
---                                     ClearPedTasksImmediately(PlayerPedId())
---                                     SetVehicleModKit(vehicle, 0)
---                                     SetVehicleMod(vehicle, 12, 2, true)
---                                     local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
---                                     saveVehicle()  
---                                     TriggerServerEvent("QBCore:Server:RemoveItem", "brake3", 1)
---                                     TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["brake3"], "remove")
---                                     QBCore.Functions.Notify("Brakes Upgrade S Successfully installed", "Success", 5000)
+                                QBCore.Functions.Progressbar("Transmission", "Installing Transmission", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 13, 2, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "transmission3", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["transmission3"], "remove")
+                                    QBCore.Functions.Notify("Transmission Upgrade S Successfully installed", "Success", 5000)
 
---                                 end)
---                             end
---                         end
---                     end
---                 elseif brake > 3 or brake < 1 then
---                     QBCore.Functions.Notify("Cannot Install Brakes", "Error", 5000)
---                 else
---                     QBCore.Functions.Notify("Brakes Upgrade S Already Installed", "Error", 5000)
---                 end
---             else
---                 QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
---             end
---         else
---             QBCore.Functions.Notify("Do you work for gasmonkey?", "error", 4000)
---         end
--- end)
+                                end)
+                            end
+                        end
+                    end
+                elseif transmission > 3 or transmission < 1 then
+                    QBCore.Functions.Notify("Cannot Install Transmission", "Error", 5000)
+                else
+                    QBCore.Functions.Notify("Transmission Upgrade S Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
+
+-- --Suspension
+RegisterNetEvent('qb-mechanicparts:S0')
+AddEventHandler('qb-mechanicparts:S0', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    suspension = GetVehicleMod(veh, 15)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if suspension == 0 or suspension == 1 or suspension == 2 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+                            
+                                QBCore.Functions.Progressbar("Suspension", "Installing Stock Suspension", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 15, -1, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "suspension0", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["suspension0"], "remove")
+                                    QBCore.Functions.Notify("Stock Suspension Successfully installed", "Success", 5000)
+
+                                end)
+                            end
+                        end
+                    end
+                elseif suspension > 2 then
+                    QBCore.Functions.Notify("Cannot Install Suspension", "Error", 5000)
+                else
+                    QBCore.Functions.Notify("Stock Suspension Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
+
+RegisterNetEvent('qb-mechanicparts:S1')
+AddEventHandler('qb-mechanicparts:S1', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    suspension = GetVehicleMod(veh, 15)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if suspension == -1 or suspension == 1 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+                            
+                                QBCore.Functions.Progressbar("Suspension", "Installing Suspension", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 15, 0, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "suspension1", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["suspension1"], "remove")
+                                    QBCore.Functions.Notify("Suspension Upgrade B Successfully installed", "Success", 5000)
+
+                                end)
+                            end
+                        end
+                    end
+                elseif suspension > 1 then
+                    QBCore.Functions.Notify("Cannot Install Suspension", "Error", 5000)
+                else
+                    QBCore.Functions.Notify("Suspension Upgrade B Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
+
+RegisterNetEvent('qb-mechanicparts:S2')
+AddEventHandler('qb-mechanicparts:S2', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    suspension = GetVehicleMod(veh, 15)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if suspension == 0 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+                            
+                                QBCore.Functions.Progressbar("Suspension", "Installing Suspension", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 13, 2, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "suspension2", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["suspension2"], "remove")
+                                    QBCore.Functions.Notify("Suspension Upgrade C Successfully installed", "Success", 5000)
+
+                                end)
+                            end
+                        end
+                    end
+                elseif suspension > 1 or suspension < 0 then
+                    QBCore.Functions.Notify("Cannot Install Suspension", "Error", 5000)
+                else
+                    QBCore.Functions.Notify("Suspension Upgrade C Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
+
+RegisterNetEvent('qb-mechanicparts:S3')
+AddEventHandler('qb-mechanicparts:S3', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    suspension = GetVehicleMod(veh, 15)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if suspension == 1 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+                            
+                                QBCore.Functions.Progressbar("Suspension", "Installing Suspension", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    SetVehicleMod(vehicle, 13, 2, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "suspension3", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["suspension3"], "remove")
+                                    QBCore.Functions.Notify("Suspension Upgrade S Successfully installed", "Success", 5000)
+
+                                end)
+                            end
+                        end
+                    end
+                elseif suspension > 3 or suspension < 1 then
+                    QBCore.Functions.Notify("Cannot Install Suspension", "Error", 5000)
+                else
+                    QBCore.Functions.Notify("Suspension Upgrade S Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
+
+-- --Suspension
+RegisterNetEvent('qb-mechanicparts:Turbo0')
+AddEventHandler('qb-mechanicparts:Turbo0', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    turbo = IsToggleModOn(veh, 18)
+    print(turbo)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if turbo == 1 then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+                            
+                                QBCore.Functions.Progressbar("Turbo", "Removing Turbo", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    ToggleVehicleMod(vehicle, 18, false)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "turbo0", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["turbo0"], "remove")
+                                    QBCore.Functions.Notify("Turbo Successfully removed", "Success", 5000)
+
+                                end)
+                            end
+                        end
+                    end
+                else
+                    QBCore.Functions.Notify("Turbo Already Removed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
+
+RegisterNetEvent('qb-mechanicparts:Turbo1')
+AddEventHandler('qb-mechanicparts:Turbo1', function()
+    local vehicle = QBCore.Functions.GetClosestVehicle()
+    local PlayerJob = QBCore.Functions.GetPlayerData().job
+    turbo = IsToggleModOn(veh, 18)
+    print(turbo)
+        if PlayerJob.name == Config.Job then
+            if onDuty then
+                if turbo == false then
+                    if vehicle ~= nil and vehicle ~= 0 then
+                        if (IsBackEngine(GetEntityModel(vehicle))) then
+                            SetVehicleDoorOpen(vehicle, 5, false, false)
+                        else
+                            SetVehicleDoorOpen(vehicle, 4, false, false)
+                        end
+                        local ped = PlayerPedId()
+                        local pos = GetEntityCoords(ped)
+                        local vehpos = GetEntityCoords(vehicle)
+                        if #(pos - vehpos) < 4.0 and not IsPedInAnyVehicle(ped) then
+                            local drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, 2.5, 0)
+                            if (IsBackEngine(GetEntityModel(vehicle))) then
+                                drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
+                            end
+                            if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
+                            
+                                QBCore.Functions.Progressbar("Turbo", "Installing Turbo", 10000, false, true, {
+                                    disableMovement = true,
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {
+                                    animDict = "mini@repair",
+                                    anim = "fixing_a_player",
+                                    flags = 16,
+                                }, {}, {}, function() -- Done
+                                    ClearPedTasksImmediately(PlayerPedId())
+                                    SetVehicleModKit(vehicle, 0)
+                                    ToggleVehicleMod(vehicle, 18, true)
+                                    local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
+                                    saveVehicle()  
+                                    TriggerServerEvent("QBCore:Server:RemoveItem", "turbo1", 1)
+                                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["turbo1"], "remove")
+                                    QBCore.Functions.Notify("Turbo Successfully installed", "Success", 5000)
+                                    
+
+                                end)
+                            end
+                        end
+                    end
+                else
+                    QBCore.Functions.Notify("Turbo Already Installed", "Error", 5000)
+                end
+            else
+                QBCore.Functions.Notify("You need to sign on duty!!", "Error", 5000)
+            end
+        else
+            QBCore.Functions.Notify("You are not allowed to complete this action", "error", 4000)
+        end
+end)
 
 
 --Vehicle Menu
-RegisterNetEvent('qb-mechanic:VehicleMenu')
-AddEventHandler('qb-mechanic:VehicleMenu', function()
+RegisterNetEvent('qb-mechanicparts:VehicleMenu')
+AddEventHandler('qb-mechanicparts:VehicleMenu', function()
     TriggerEvent('nh-context:sendMenu', {
         {
             id = 1,
@@ -901,7 +1256,7 @@ AddEventHandler('qb-mechanic:VehicleMenu', function()
             header = "Check Status Of Vehicle",
             txt = "Make sure vehicle is in working condition",
             params = {
-                event = "qb-mechanic:CheckVehStatus"
+                event = "qb-mechanicparts:CheckVehStatus"
             }
         },
         {
@@ -909,15 +1264,15 @@ AddEventHandler('qb-mechanic:VehicleMenu', function()
             header = "Check Upgrades Of Vehicle",
             txt = "Fast as Fuckk Boii",
             params = {
-                event = "qb-mechanic:CheckMods"
+                event = "qb-mechanicparts:CheckMods"
             }
         },
     })
 end)
 
 --Check Car Health
-RegisterNetEvent('qb-mechanic:CheckVehStatus')
-AddEventHandler('qb-mechanic:CheckVehStatus', function()
+RegisterNetEvent('qb-mechanicparts:CheckVehStatus')
+AddEventHandler('qb-mechanicparts:CheckVehStatus', function()
     veh = QBCore.Functions.GetClosestVehicle()
     plate = GetVehicleNumberPlateText(veh)
     engineHealth = GetVehicleEngineHealth(veh)
@@ -932,7 +1287,7 @@ AddEventHandler('qb-mechanic:CheckVehStatus', function()
             header = "<  Go back",
             txt = "",
             params = {
-                event = "qb-mechanic:VehicleMenu"
+                event = "qb-mechanicparts:VehicleMenu"
             }
         },
         {
@@ -965,8 +1320,8 @@ AddEventHandler('qb-mechanic:CheckVehStatus', function()
 end)
 
 --Check Mods installed on Car
-RegisterNetEvent('qb-mechanic:CheckMods')
-AddEventHandler('qb-mechanic:CheckMods', function()
+RegisterNetEvent('qb-mechanicparts:CheckMods')
+AddEventHandler('qb-mechanicparts:CheckMods', function()
 
     veh = QBCore.Functions.GetClosestVehicle()
     engine = GetVehicleMod(veh, 11)
@@ -1026,11 +1381,10 @@ AddEventHandler('qb-mechanic:CheckMods', function()
     suspension == 2 then
         suspension = "Upgrade Level S"
     end
-    if turbo == "0" then
-        turbo = "Standard"
-    elseif
-    turbo == 1 then
+    if turbo == 1  then
         turbo = "You have a Turbo"
+    else
+        turbo = "No Turbo"
     end
     
     
@@ -1040,7 +1394,7 @@ AddEventHandler('qb-mechanic:CheckMods', function()
             header = "<  Go back",
             txt = "",
             params = {
-                event = "qb-mechanic:VehicleMenu"
+                event = "qb-mechanicparts:VehicleMenu"
             }
         },
         {
