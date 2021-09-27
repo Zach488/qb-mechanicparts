@@ -102,7 +102,9 @@ AddEventHandler('qb-mechanic:E0', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     engine = GetVehicleMod(veh, 11)
-        if PlayerJob.name == "gasmonkey" then
+		--test job name
+        if PlayerJob.name == Config.Job then
+			--test job name
             if onDuty then
                 if engine == 0 or engine == 1 or engine == 2 or engine == 3 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -162,7 +164,9 @@ AddEventHandler('qb-mechanic:E1', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     engine = GetVehicleMod(veh, 11)
-        if PlayerJob.name == "gasmonkey" then
+		--test job name
+        if PlayerJob.name == Config.Job then
+			--test job name
             if onDuty then
                 if engine == -1 or engine == 1 then
                     if vehicle ~= nil and vehicle ~= 0 then
@@ -222,7 +226,9 @@ AddEventHandler('qb-mechanic:E2', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
     engine = GetVehicleMod(veh, 11)
-        if PlayerJob.name == "gasmonkey" then
+        		--test job name
+        if PlayerJob.name == Config.Job then
+			--test job name
             if onDuty then
                 if engine == 0 then
                     if vehicle ~= nil and vehicle ~= 0 then
