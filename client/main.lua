@@ -224,7 +224,7 @@ AddEventHandler('qb-mechanicparts:E2', function()
     engine = GetVehicleMod(veh, 11)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if engine == 0 then
+                if engine == 0 or engine == 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -526,7 +526,7 @@ AddEventHandler('qb-mechanicparts:B2', function()
     brake = GetVehicleMod(veh, 12)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if brake == 0 then
+                if brake == 0 or brake == 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -767,7 +767,7 @@ AddEventHandler('qb-mechanicparts:T2', function()
     transmission = GetVehicleMod(veh, 13)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if transmission == 0 then
+                if transmission == 0 or transmission == 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -1008,7 +1008,7 @@ AddEventHandler('qb-mechanicparts:S2', function()
     suspension = GetVehicleMod(veh, 15)
         if PlayerJob.name == Config.Job then
             if onDuty then
-                if suspension == 0 then
+                if suspension == 0 or suspension == 2 then
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
@@ -1037,7 +1037,7 @@ AddEventHandler('qb-mechanicparts:S2', function()
                                 }, {}, {}, function() -- Done
                                     ClearPedTasksImmediately(PlayerPedId())
                                     SetVehicleModKit(vehicle, 0)
-                                    SetVehicleMod(vehicle, 13, 1, true)
+                                    SetVehicleMod(vehicle, 15, 1, true)
                                     local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
                                     saveVehicle()  
                                     TriggerServerEvent("QBCore:Server:RemoveItem", "suspension2", 1)
@@ -1097,7 +1097,7 @@ AddEventHandler('qb-mechanicparts:S3', function()
                                 }, {}, {}, function() -- Done
                                     ClearPedTasksImmediately(PlayerPedId())
                                     SetVehicleModKit(vehicle, 0)
-                                    SetVehicleMod(vehicle, 13, 2, true)
+                                    SetVehicleMod(vehicle, 15, 2, true)
                                     local vehicle = QBCore.Functions.GetVehicleProperties(vehicle)
                                     saveVehicle()  
                                     TriggerServerEvent("QBCore:Server:RemoveItem", "suspension3", 1)
