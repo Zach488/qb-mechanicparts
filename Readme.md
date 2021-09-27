@@ -123,18 +123,7 @@ Config.TargetBones = {
                 event = "qb-mechanicparts:VehicleMenu",
                 icon = "fad fa-key",
                 label = "Vehicle Menu",
-            },
-            {
-                type = "client",
-                event = "qb-mechanicparts:CheckVehStatus",
-                icon = "fas fa-chevron-circle-left",
-                label = "CheckVehStatus",
-            },
-            {
-                type = "client",
-                event = "qb-mechanicparts:CheckMods",
-                icon = "fas fa-chevron-circle-right",
-                label = "CheckMods",
+                job = "gasmonkey",
             },
         },
         distance = 3.0
