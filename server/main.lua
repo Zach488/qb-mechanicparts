@@ -4,7 +4,6 @@ QBCore.Functions.CreateUseableItem("engine0", function(source, item)
     
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
-        print("awe")
         TriggerClientEvent("qb-mechanicparts:E0", source)
     else
         TriggerClientEvent('QBCore:Notify', source, "Unknown Error", "error")
