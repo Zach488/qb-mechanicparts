@@ -76,10 +76,9 @@ local function saveVehicle()
     vehicleMods.mods[12] = GetVehicleMod(veh,12)
     vehicleMods.mods[13] = GetVehicleMod(veh,13)
     vehicleMods.mods[15] = GetVehicleMod(veh,15)
-    
     vehicleMods.mods[18] = IsToggleModOn(veh, 18)
 
-	local myCar = QBCore.Functions.GetVehicleProperties(veh)
+local myCar = QBCore.Functions.GetVehicleProperties(veh)
     TriggerServerEvent('updateVehicle',myCar)
 end
 
@@ -101,6 +100,7 @@ RegisterNetEvent('qb-mechanicparts:E0')
 AddEventHandler('qb-mechanicparts:E0', function()
     local vehicle = QBCore.Functions.GetClosestVehicle()
     local PlayerJob = QBCore.Functions.GetPlayerData().job
+--     local trunkpos = false
     engine = GetVehicleMod(veh, 11)
         if PlayerJob.name == Config.Job then
             if onDuty then
@@ -108,6 +108,7 @@ AddEventHandler('qb-mechanicparts:E0', function()
                     if vehicle ~= nil and vehicle ~= 0 then
                         if (IsBackEngine(GetEntityModel(vehicle))) then
                             SetVehicleDoorOpen(vehicle, 5, false, false)
+-- 			    trunkpos = true
                         else
                             SetVehicleDoorOpen(vehicle, 4, false, false)
                         end
@@ -120,7 +121,6 @@ AddEventHandler('qb-mechanicparts:E0', function()
                                 drawpos = GetOffsetFromEntityInWorldCoords(vehicle, 0, -2.5, 0)
                             end
                             if #(pos - drawpos) < 2.0 and not IsPedInAnyVehicle(ped) then
-                            
                                 QBCore.Functions.Progressbar("Gas_Engine", "Installing Engine", 10000, false, true, {
                                     disableMovement = true,
                                     disableCarMovement = true,
@@ -140,6 +140,11 @@ AddEventHandler('qb-mechanicparts:E0', function()
                                     TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["engine0"], "remove")
                                     QBCore.Functions.Notify("Stock Engine Successfully installed", "Success", 5000)
                                 end)
+-- 				if trunkpos then
+-- 					SetVehicleDoorShut(vehicle, 5, false)
+-- 				else
+-- 					SetVehicleDoorShut(vehicle, 4, false)
+-- 				end
                             end
                         end
                     end
